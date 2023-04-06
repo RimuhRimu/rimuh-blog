@@ -1,0 +1,113 @@
+.formSearch {
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  height: 42px;
+  margin: 0 0 20px 0;
+  transition: box-shadow 0.3s;
+}
+
+.searchText {
+  border: 0;
+  margin: 0 20px 0 12px;
+  width: 200px;
+  font-size: 1em;
+  font-family: inherit;
+}
+
+.searchText:focus {
+  outline: 0;
+}
+
+.resultBox {
+  padding: 5px 3px;
+  margin: 0 20px;
+}
+
+.searchIcon {
+  display: flex;
+  align-items: center;
+  margin: 0 0 0 10px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.searchCancel {
+  border: 0;
+  background: inherit;
+  display: flex;
+  align-items: center;
+  margin: 0 10px 0 0;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.searchConfirm {
+  border: 0;
+  background-color: inherit;
+  margin: 0 10px 0 0;
+  display: flex;
+  align-items: center;
+  font-size: 1em;
+  transition: 0.3s ease all;
+}
+
+.searchCancel:hover,
+.searchIcon:hover,
+.searchConfirm:hover {
+  color: var(--links);
+}
+
+.hits {
+  position: absolute;
+  font-size: 16px;
+  border: 3.2px hidden #000;
+  border-radius: 12px;
+  background-color: var(--hits-background-color);
+  max-width: 525px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.hits > div > p {
+  padding: 5px;
+}
+
+.hitList {
+  padding: 20px;
+}
+
+.hitItem {
+  padding: 5px;
+  margin: 15px 0;
+  border-radius: 5px;
+  transition: 0.3s ease all;
+}
+.hitItem a {
+  color: black;
+}
+
+.hitItem:hover {
+  background-color: #bfdfff;
+}
+
+.borderCircle {
+  border-radius: 9999px;
+}
+
+.colorInherit {
+  color: inherit;
+}
+
+.formSearch, .searchText {
+  background-color: var(--search-background-color);
+}
+
+.searchIcon, .searchCancel, .searchConfirm {
+  color: var(--search-icon);
+  transition: 0.3s ease color;
+}
+
+.formSearch:focus-within {
+  box-shadow: var(--shadow-search);
+}

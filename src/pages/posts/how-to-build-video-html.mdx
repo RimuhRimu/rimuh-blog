@@ -1,0 +1,557 @@
+import Image from "next/image"
+
+import Layout from "@/layout"
+
+import img1 from "@/img/how-to-build-video-html/1.png"
+import img2 from "@/img/how-to-build-video-html/2.png"
+import img3 from "@/img/how-to-build-video-html/3.png"
+import img4 from "@/img/how-to-build-video-html/4.png"
+import img5 from "@/img/how-to-build-video-html/5.png"
+import img6 from "@/img/how-to-build-video-html/6.png"
+import img7 from "@/img/how-to-build-video-html/7.png"
+import img8 from "@/img/how-to-build-video-html/8.png"
+import img9 from "@/img/how-to-build-video-html/9.png"
+
+import utils from "@/utils.module.css"
+
+<Layout>
+  <section>
+
+  # How create a video media player with HTML, CSS and JS 🎥
+
+  When I was trying to figure out what to do for my next project,
+  I found that a common project for a front-end developer would be to develop their own video player with HTML,
+  CSS, and vanilla JS from scratch, using only the API of
+  [`HTMLMediaElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement). So, that’s what I did.
+
+  Through this project, I learned how to properly use the
+  [`<video>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video) tag,
+  increase or decrease the audio using a slider, mute or unmute sound,
+  skip ahead parts of the video using a
+  [`<progress>`](https://developer.mozilla.org/es/docs/Web/HTML/Element/progress) tag,
+  play and pause the video and finally how implement full-screen mode.
+
+  <Image src={img1} alt="blog html video source 1"/>
+
+  Let me show you into how I achieved this result 🤟.
+
+  We’ll get started with the layout.
+
+  ```html
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <title>Video media player</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/80619f9a2e.js" crossorigin="anonymous"></script>
+      </head>
+      <body>
+        <section id="container">
+          <figure class="videoLayout">
+            <figcaption id="title">Video player</figcaption>
+            <video id="video" controls src="https://ia600300.us.archive.org/17/items/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"></video>
+          </figure>
+        </section>
+      </body>
+      <script src="script.js"></script>
+    </html>
+  ```
+  <div className={utils.note}>
+    *Note: I used a video provided by [archive.org](http://web.archive.org/) as an example, which is a free video, so there are no problems with using it.*
+  </div>
+
+  Though that here I’ll be using [Fontawesome](https://fontawesome.com/) , you can use whatever you like.
+
+  <Image src={img2} alt="blog html video source 2"/>
+
+  After setting up the code above, you should see something like this.
+  There are default controls provided by Firefox; the design may vary depending on your browser.
+  However, we'll be creating our own controls, so remove the attribute controls.
+
+  ```css
+    :root {
+      --blue:#3C91E6;
+      --black-bg:#1f1f1f;
+      --white:#FAFFFD;
+      --tomato:#FF674D;
+      font-family: Helvetica;
+    }
+
+    body {
+      color: var(--white);
+      background-color: var(--black-bg);
+      margin: 0;
+    }
+
+    .container {
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  ```
+  Let’s apply these first styles, and color palettes, and then it should look like this.
+
+  <Image src={img3} alt="blog html video source 3"/>
+
+  We just centered it and applied a background color, now we’re going to make our <span className={utils.inlineCode}>`<video>{:html}`</span> tag.
+
+  It now looks better if we add this.
+
+  ```css
+    .videoLayout {
+      position: relative;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 800px;
+      height: 100%;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      box-shadow: 20px 20px 20px 1px black;
+    }
+
+    /* Video title */
+
+    figcaption {
+      position: absolute;
+      top: 28px;
+      left: 50% - 88px;
+    }
+  ```
+
+  Here's the result.
+
+  <Image src={img4} alt="blog html video source 4"/>
+
+  Let's add a loader.
+
+  ```html
+    <section class="container" id="container">
+      <figure class="videoLayout">
+        <figcaption id="title">Video player</figcaption>
+        
+        <!-- loader -->
+          <span class="loader" id="loader">
+            <span class="loaderInner">
+            </span>
+          </span>
+        <!---->
+        
+        <video id="video" tabindex="0" src=".../big_buck_bunny_720p_surround.mp4"></video>
+      </figure>
+    </section>
+  ```
+
+  ```css
+    /* loader */
+
+    .loader {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border: 4px solid #fff;
+      animation: loader 2s infinite ease;
+    }
+
+    .loaderInner {
+      display: inline-block;
+      vertical-align: top;
+      width: 100%;
+      background-color: #fff;
+      animation: loaderInner 2s infinite ease-in;
+    }
+  ```
+
+  You should see a square like this.
+
+  <Image src={img5} alt="blog html video source 5"/>
+
+  It looks boring. Let's add some movement!
+
+  ```css
+    @keyframes loader {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      50% {
+        transform: rotate(180deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  ```
+  Adding the code above should make the loader spin around.
+
+  ```css
+  @keyframes loaderInner {
+    0% {
+      height: 0%;
+    }
+
+    25% {
+      height: 50%;
+    }
+
+    50% {
+      height: 100%;
+    }
+
+    100% {
+      height: 0%;
+    }
+  }
+  ```
+
+  With this code, the inner box can be turned into a loader that grows and shrinks as it spins, resulting in a fancy loader!
+
+  Now, let's add some interactivity.
+
+  ```html
+    ...
+            <!-- loader -->
+            <span class="loader" id="loader">
+              <span class="loaderInner">
+              </span>
+            </span>
+            <!---->
+
+          <!-- control bar -->
+          <div class="controls" id="controls">
+              <div class="bar" id="bar" role="menubar">
+
+                <!-- play or pause icon -->
+                <div id="playpause" tabindex="0" role="button">
+                  <i class="fa-solid fa-play playpause"></i>
+                </div>
+                <!--  -->
+
+              <!-- progress bar -->
+              <progress id="progress" min="0" value="0" role="progressbar"></progress>
+              <!--  -->
+
+            </div>
+          </div>
+          <!--  -->
+    ...
+  ```
+  ```css
+    /* control bar */
+
+    .bar {
+      position: absolute;
+      top: 83%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .playpause {
+      font-size: 1em;
+      font-size: 1.5em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* progress bar */
+
+    progress {
+      position: absolute;
+      margin-top: 8px;
+      border-radius: 10px;
+      left: 2.3%;
+      top: 100%;
+      width: 95%;
+      height: 12px;
+    }
+
+    ::-moz-progress-bar,::-webkit-progress-bar {
+      background-color: var(--blue);
+      border-radius: 10px;
+    }
+  ```
+
+  We are getting closer to our video player.
+
+  <Image src={img6} alt="blog html video source 6"/>
+
+  ```js
+    const $ = document
+    const supportsVideo = !!$.createElement("video").canPlayType 
+    // check if support video media
+
+    if (supportsVideo) {
+      const video = $.getElementById("video")
+      video.controls = false //ensuring that we have controls disable from the start
+
+      const title = $.getElementById("title")
+      const controls = $.getElementById("controls")
+      
+      //hidding controls when mouse is no moving
+      const hideUnhide = () => {
+        controls.style.opacity = "100%"
+        title.style.opacity = "100%"
+        let hide = () => {
+          controls.style.opacity = "0"
+          title.style.opacity = "0"
+        }
+        setTimeout(hide, 6000)
+      }
+
+      video.addEventListener("focus", hideUnhide)
+      video.addEventListener("click", hideUnhide)
+      
+      //show/hide loader when waiting for the video or when is already loaded
+      let loader = $.getElementById("loader")
+      video.addEventListener("seeking", () => loader.style.display = "inline-block")
+      video.addEventListener("loadstart", () => loader.style.display = "inline-block")
+      video.addEventListener("waiting", () => loader.style.display = "inline-block")
+      video.addEventListener("seeked", () => loader.style.display = "none")
+      video.addEventListener("loadeddata", () => loader.style.display = "none")
+      
+      // Fontawesome classes
+      const [iconPlay, iconPause] = ["svg-inline--fa fa-pause playpause","svg-inline--fa fa-play playpause"]
+
+      //playpause logic
+      const triggerPlayPause = () => {
+        let playpause = $.getElementsByClassName("playpause")[0]
+        //changing the classes changes the icon
+        if(video.paused || video.ended) {
+          video.play()
+          playpause.className.baseVal = iconPlay
+        }
+        else {
+          video.pause()
+          playpause.className.baseVal = iconPause
+        }
+      }
+      
+      const playpauseContainer = $.getElementById("playpause")
+      //once data is loaded, it is safe to add the event listeners that needs that data
+      video.addEventListener("loadeddata", () => {
+        playpauseContainer.addEventListener("click",triggerPlayPause)
+        $.addEventListener("keyup", (event) => {
+          let key = event.key.toLowerCase()
+          if(key === "enter" || key === " ") {
+            triggerPlayPause()
+            hideUnhide()
+          }
+        })
+      })
+    }
+  ```
+
+  <Image src={img7} alt="blog html video source 7"/>
+
+  Once the video has loaded, you should be able to pause and play it.
+  Additionally, let's add the ability to jump to any point in the video.
+
+  ```js
+    const $ = document
+    const supportsVideo = !!$.createElement("video").canPlayType
+    // check if support video media
+
+    if(supportsVideo) {	
+      ...
+      const playpauseContainer = $.getElementById("playpause")
+      //once data is loaded, it is safe to add the event listeners that needs that data
+      // and is safe to Jump to in the video
+      video.addEventListener("loadeddata", () => {
+        ...
+        //Jump to in the video
+        progress.addEventListener("click", (event) => {
+          let rect = progress.getBoundingClientRect()
+          let pos = (event.pageX - rect.left) / progress.offsetWidth
+          // this is explained in MDN https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/cross_browser_video_player#skip_ahead
+          video.currentTime = pos * video.duration
+        })
+      })
+
+      //update progress bar and duration
+      const progress = $.getElementById("progress")
+      video.addEventListener("loadedmetadata", () => {
+        progress.setAttribute("max", video.duration) //set max duration as value to the progress bar
+      })
+
+      video.addEventListener("timeupdate", () => {
+        let playpause = playpauseContainer.children[0]
+        progress.value = video.currentTime //along time advances update the progress value
+        if(video.ended) playpause.className = iconPause
+      })
+    }
+  ```
+
+  Now that you're able to skip ahead in parts of the video,
+  the next step is to add more buttons, such as mute,
+  full-screen view, and a slider.
+
+  ```html
+    ...
+      <!-- progress bar -->
+      <progress id="progress" min="0" value="0" role="progressbar"></progress>
+      <!--  -->
+
+      <!-- right controls -->
+      <div class="rightControls" id="rightControls">
+        <div class="durationBox">
+          <span class="currentDuration" id="currentDuration">00:00</span>/
+          <span class="duration" id="duration">00:00</span>
+        </div>
+        <input type="range" name="volume" id="volSlider" min="0" max="100" role="slider" aria-label="volume"></input>
+        <div id="volume" tabindex="0" role="button">
+          <i class="fa-solid fa-volume-high"></i>
+        </div>
+        <div id="fullscreen" tabindex="0" role="button">
+          <i class="fa-solid fa-expand"></i>
+        </div>
+      </div>
+      <!--  -->
+    ...
+  ```
+
+  ```css
+    /* control bar */
+
+  .rightControls {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 330px;
+    right: 5.0%;
+  }
+
+  /* some animations :) */
+  #playpause,
+  #volume,
+  #fullscreen {
+    transition: .5s all ease-in;
+  }
+
+  #playpause:focus,#playpause:hover,
+  #volume:focus,#volume:hover,
+  #fullscreen:focus,#fullscreen:hover {
+    border: 1px solid var(--white);
+    background-color: var(--tomato);
+    border-radius: 5px;
+  }
+  ```
+  <Image src={img8} alt="blog html video source 8"/>
+
+  That looks like a video player, but those buttons still don't work. Let's make them interactive.
+
+  ```js
+  	...
+    //update progress bar and duration
+    const progress = $.getElementById("progress")
+    video.addEventListener("loadedmetadata", () => { // once metadata is fetched, we can show the video duration
+      const minutes = Math.floor(video.duration/60)
+      const seconds = Math.floor(video.duration)-minutes*60
+      duration.textContent = `${minutes > 9 ? minutes : `0${minutes}`}:${seconds > 9 ? seconds : `0${seconds}`}`
+      progress.setAttribute("max", video.duration) //set max duration as value to the progress bar
+    })
+
+    video.addEventListener("timeupdate", () => {
+      loader.style.display = "none" //while the video is going on we hide the loader
+      let playpause = playpauseContainer.children[0]
+      progress.value = video.currentTime //update the progress
+      
+      const minutes = Math.floor(video.currentTime/60)
+      const seconds = Math.floor(video.currentTime)-minutes*60
+      currentDuration.textContent = `${minutes > 9 ? minutes : `0${minutes}`}:${seconds > 9 ? seconds : `0${seconds}`}`
+      //update the current time of the video
+      if(video.ended) playpause.className = iconPause
+    })
+  ```
+
+  Next,let's go with the volume.
+
+  ```js
+  	...
+    //raise and decrease volume logic
+    const volSlider = $.getElementById("volSlider")
+    volSlider.addEventListener("input", () => video.volume = volSlider.value/100) //when the slider moved it chages the volume
+    const volume = $.getElementById("volume")
+    video.volume = volSlider.value/100
+
+    let volumeTrigger = () => {
+      video.muted = !video.muted
+      const [volTrue,volFalse] = ["svg-inline--fa fa-volume-high","svg-inline--fa fa-volume-off"]
+      if(video.muted) {
+        volume.children[0].className.baseVal = volFalse
+      }
+      else {
+        volume.children[0].className.baseVal = volTrue
+      }
+    }
+    volume.addEventListener("click", volumeTrigger
+    volume.addEventListener("keyup", (event) => {
+      let key = event.key.toLowerCase()
+      if (key === "enter") {
+        volumeTrigger()
+        hideUnhide()
+      }
+    })
+  ```
+
+  And finally, the fullscreen feature.
+
+  ```js
+  ...
+  //fullscreen logic, also check if fullscreen is supported
+  //this is well explained in MDN https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/cross_browser_video_player#fullscreen
+    const container = $.querySelector("figure")
+    const fullscreen = $.getElementById("fullscreen")
+    const fullscreenEnabled = !!(document.fullscreenEnabled || document.mozFullScreenEnabled || document.msFullscreenEnabled || document.webkitSupportsFullscreen || document.webkitFullscreenEnabled || document.createElement('video').webkitRequestFullScreen)
+    const isFullscreen = () => {
+    return !!(document.fullscreen || document.webkitIsFullScreen || document.mozFullScreen || document.msFullscreenElement || document.fullscreenElement);
+  }
+    if (!fullscreenEnabled) fullscreen.style.display = 'none'
+
+    fullscreen.addEventListener("click", () => handleFullscreen())
+    fullscreen.addEventListener("keyup", (e) => e.key === " " || e.key.toLowerCase() === "enter" ? handleFullscreen() : '')
+
+    let handleFullscreen = () => {
+      if (isFullscreen()) {
+        if ($.exitFullscreen) $.exitFullscreen()
+        else if ($.mozCancelFullScreen) $.mozCancelFullScreen()
+        else if ($.webkitCancelFullScreen) $.webkitFullScreenchange()
+        else if ($.msExitFullScreen) $.msExitFullScreen()
+        setFullscreenData(false)
+      }
+      else {
+        if (container.requestFullscreen) container.requestFullscreen()
+        else if (container.mozRequestFullScreen) container.mozRequestFullScreen()
+        else if (container.webkitRequestFullScreen) container.webkitRequestFullScreen()
+        else if (container.msRequestFullScreen) container.msRequestFullScreen()
+        setFullscreenData(true)
+      }
+    }
+
+    const setFullscreenData = (state) => container.setAttribute("data-fullscreen", !!state)
+
+    $.addEventListener("fullscreenchange", () => setFullscreenData(!!($.fullscreen || $.fullscreenElement)))
+    $.addEventListener("webkitfullscreenchange", () => setFullscreenData(!!$.webkitfullscreenchange))
+    $.addEventListener("mozfullscreenchange", () => setFullscreenData(!!$.mozFullScreen))
+    $.addEventListener("msfullscreenchange", () => setFullscreenData(!!$.msFullscreenElement))
+  ```
+
+  <Image src={img9} alt="blog html video source 9"/>
+
+  And here we have our video player. I hope it was helpful. It was fun for me. 👋
+
+  </section>
+</Layout>

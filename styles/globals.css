@@ -1,0 +1,97 @@
+:root {
+  --links: #0070f3;
+  --item-hover-color: #7c7fff66;
+  --note-background-color: #f5f5f5;
+  --border-radius: 12px;
+  --search-icon: #aaaaa0;
+  --search-background-color: #f9f9fe;
+  --shadow-search: 2px 3px 8px 2px #dedef6;
+  --hits-background-color: #f1f1fe;
+  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --links: #ffa500;
+    --item-hover-color: #7c7fff66;
+    --note-background-color: #6f6f6f;
+    --search-icon: #e3e3e3;
+    --search-background-color: #505986;
+    --shadow-search: 2px 3px 8px 2px #505986;
+    --hits-background-color: #2f2f2fef;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, "Inter","Helvetica", system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  line-height: 1.6;
+  font-size: 1rem;
+  max-width: 100vw;
+  transition: 0.3s ease color;
+}
+
+a {
+  color: var(--links);
+  text-decoration: none;
+}
+
+h1 {
+  text-align: center;
+}
+
+ol,ul {
+  list-style-type: "# ";
+  margin: 0;
+  padding: 0;
+  padding-left: 1.5rem;
+}
+
+li {
+  padding: 0.5rem 0;
+}
+
+pre {
+  border-radius: var(--border-radius);
+  padding: 12px;
+  overflow: auto;
+  font-size: 0.8rem;
+  max-width: inherit;
+}
+
+code {
+  font-family: var(--font-mono);
+}
+
+section {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+p {
+  word-wrap: break-word;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+}
+
+mark {
+  background-color: #aeaeff;
+  margin-left: 4px;
+  font-style: italic;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}

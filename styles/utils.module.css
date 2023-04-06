@@ -1,0 +1,41 @@
+.list {
+  display: flex;
+  flex-direction: column;;
+}
+
+.list > li {
+  text-align: left;
+  padding: 5px 0;
+}
+
+.itemList {
+  color: var(--links);
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: 0.3s ease all;
+  display: inline-block;
+  white-space:pre-wrap;
+  max-width: 90vw;
+}
+
+.itemList:hover {
+  background: var(--item-hover-color);
+  transition: 0.4s ease all;
+}
+
+.note {
+  background-color: var(--note-background-color);
+  padding: 5px 10px;
+  border-radius: var(--border-radius);
+}
+
+.inlineCode {
+  display: inline-flex;
+}
+
+.inlineCode * {
+  border-radius: 3px;
+  padding: 0 3px;
+  width: 100%;
+  height: 100%;
+}
