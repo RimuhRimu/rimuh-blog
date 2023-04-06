@@ -12,20 +12,13 @@ const CustomStatus = connectStateResults(({ searchState, searchResults }) => {
         <ul className={searchStyles.resultBox}>
           {searchResults.hits.map((hit) => (
             <li key={hit.objectID} className={searchStyles.hitItem} >
-              <Link href={`/post/${hit.id}`}>
-                <a>
-                  <div>
-                    <h4 className={searchStyles.headingMd}>
-                      <style jsx>{`
-                      h4 {margin:0;}
-                    `}</style>
-                      <Highlight hit={hit} attribute='title' tagName='mark'></Highlight>
-                    </h4>
-                    <small>
-                      <Highlight hit={hit} attribute='content' tagName='mark'></Highlight>
-                    </small>
-                  </div>
-                </a>
+              <Link href={`/posts/${hit.name}`}>
+                <div>
+                  <Highlight hit={hit} attribute='title' tagName='mark'></Highlight>
+                  <small>
+                    <Highlight hit={hit} attribute='content' tagName='mark'></Highlight>
+                  </small>
+                </div>
               </Link>
             </li>
           ))}

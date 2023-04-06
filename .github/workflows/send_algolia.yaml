@@ -6,9 +6,12 @@ jobs:
     runs-on: ubuntu-latest
     env:
       ALGOLIA_API_KEY_ADMIN: ${{ secrets.ALGOLIA_API_KEY_ADMIN }}
+      NEXT_PUBLIC_ALGOLIA_APP_ID: L00HP1BY6T
+      NEXT_PUBLIC_ALGOLIA_INDEX_NAME: posts
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '17'
       - run: node ./lib/sendToAlgolia.js
+      - run: sh ./scripts/commitAndPush.sh

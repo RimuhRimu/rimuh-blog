@@ -3,10 +3,10 @@ import Posts from '@/posts'
 
 import styles from "@/Layout.module.css"
 import Layout from '@/layout'
-import { getPostsNames } from '@/getPostsNames'
+import { getRecords } from '@/getPostsNames'
 
 export async function getStaticProps() {
-  const posts = getPostsNames()
+  const posts = getRecords()
   return {
     props: {
       posts

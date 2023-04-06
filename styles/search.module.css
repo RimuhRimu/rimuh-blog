@@ -82,9 +82,7 @@
   margin: 15px 0;
   border-radius: 5px;
   transition: 0.3s ease all;
-}
-.hitItem a {
-  color: black;
+  list-style: none;
 }
 
 .hitItem:hover {

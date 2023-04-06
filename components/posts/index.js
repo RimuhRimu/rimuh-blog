@@ -2,17 +2,16 @@ import utils from "@/utils.module.css"
 import Link from "next/link"
 
 export default function Posts({ posts }) {
-  posts = Object.entries(posts)
   return (
     <ul className={utils.list} style={{
       listStyle: "none",
     }}>
       {
-        posts.map(([key, value]) => {
+        posts.map(({ name, title }) => {
           return (
-            <li key={key}>
-              <Link href={`/posts/${key}`} className={utils.itemList}>
-                <i>#</i> {value}
+            <li key={name}>
+              <Link href={`/posts/${name}`} className={utils.itemList}>
+                <i>#</i> {title}
               </Link>
             </li>
           )
