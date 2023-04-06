@@ -13,5 +13,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '17'
+      - run: yarn
       - run: node ./lib/sendToAlgolia.js
       - run: sh ./scripts/commitAndPush.sh
