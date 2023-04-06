@@ -7,7 +7,7 @@ import { HalfMoon, SunLight } from "iconoir-react";
 
 import Footer from "@/footer";
 import SearchBar from "@/search";
-import BackHome from "../backHome/index.js";
+import BackHome from "@/backHome";
 
 import styles from "@/Layout.module.css";
 
