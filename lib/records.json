@@ -1,1 +1,12 @@
-[{"name":"firstPost","title":"My First post here yay 🎊","objectID":"1844743000"},{"name":"OtherPost","title":"Who knows what's here 🐶","objectID":"1844744000"},{"name":"MaybeOtherPost","title":"I can't recall what's inside here 🤔","objectID":"1844745000"},{"name":"how-to-build-video-html","title":"How to create a video media player with HTML, CSS and JS 🎥","objectID":"1844746000"}]
+[
+  {
+    "name": "firstPost",
+    "title": "My First post here yay 🎊",
+    "objectID": "1844743000"
+  },
+  {
+    "name": "how-to-build-video-html",
+    "title": "How to create a video media player with HTML, CSS and JS 🎥",
+    "objectID": "1844746000"
+  }
+]
