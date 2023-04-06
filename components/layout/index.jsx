@@ -1,15 +1,15 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import Head from "next/head";
+import Link from "next/link";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
-import { HalfMoon, SunLight } from 'iconoir-react'
+import { HalfMoon, SunLight } from "iconoir-react";
 
-import Footer from '@/footer'
-import SearchBar from '@/search'
-import BackHome from '../backHome/index.js'
+import Footer from "@/footer";
+import SearchBar from "@/search";
+import BackHome from "../backHome/index.js";
 
-import styles from "@/Layout.module.css"
+import styles from "@/Layout.module.css";
 
 const themes = {
   dark: {
@@ -20,7 +20,7 @@ const themes = {
     "--search-background-color": "#505986",
     "--shadow-search": "2px 3px 8px 2px #505986",
     "--hits-background-color": "#2f2f2fef",
-    "color-scheme": "dark"
+    "color-scheme": "dark",
   },
   light: {
     "--links": "#0070f3",
@@ -29,30 +29,35 @@ const themes = {
     "--search-icon": "#aaaaa0",
     "--search-background-color": "#f9f9fe",
     "--shadow-search": "2px 3px 8px 2px #dedef6",
-    "--hits-background-color": '#f1f1fe',
-    "color-scheme": "light"
-  }
-}
+    "--hits-background-color": "#f1f1fe",
+    "color-scheme": "light",
+  },
+};
 
 export default function Layout({ children, home }) {
-  const [theme, setTheme] = useState(null)
+  const [theme, setTheme] = useState(null);
 
   const toggleTheme = () => {
-    const newTheme = localStorage.getItem("theme-value") === "dark" ? "light" : "dark"
-    setTheme(newTheme)
+    const newTheme = localStorage.getItem("theme-value") === "dark"
+      ? "light"
+      : "dark";
+    setTheme(newTheme);
 
-    for (const [prop, value] of Object.entries(themes[newTheme]))
-      document.documentElement.style.setProperty(prop, value)
+    for (const [prop, value] of Object.entries(themes[newTheme])) {
+      document.documentElement.style.setProperty(prop, value);
+    }
 
-    localStorage.setItem("theme-value", newTheme)
-  }
+    localStorage.setItem("theme-value", newTheme);
+  };
 
   useEffect(() => {
-    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ?
-      "dark" : "light"
-    localStorage.setItem("theme-value", systemTheme)
-    setTheme(systemTheme)
-  }, [])
+    const systemTheme =
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+    localStorage.setItem("theme-value", systemTheme);
+    setTheme(systemTheme);
+  }, []);
 
   return (
     <>
@@ -65,15 +70,14 @@ export default function Layout({ children, home }) {
       <main className={styles.app}>
         <SearchBar />
         <div onClick={toggleTheme}>
-          {
-            theme === "dark" ?
-              <SunLight className={styles.iconTheme} /> : <HalfMoon className={styles.iconTheme} />
-          }
+          {theme === "dark"
+            ? <SunLight className={styles.iconTheme} />
+            : <HalfMoon className={styles.iconTheme} />}
         </div>
         <Link href="/">
           <Image
             priority
-            src='/img/profile.png'
+            src="/img/profile.png"
             width={200}
             height={200}
             alt="Rimuh profile"
@@ -85,5 +89,5 @@ export default function Layout({ children, home }) {
       </main>
       <Footer />
     </>
-  )
+  );
 }

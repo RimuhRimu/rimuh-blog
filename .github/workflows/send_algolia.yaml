@@ -6,6 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       ALGOLIA_API_KEY_ADMIN: ${{ secrets.ALGOLIA_API_KEY_ADMIN }}
+      PUSH_GITHUB_API: ${{ secrets.PUSH_GITHUB_API }}
       NEXT_PUBLIC_ALGOLIA_APP_ID: L00HP1BY6T
       NEXT_PUBLIC_ALGOLIA_INDEX_NAME: posts
     steps:
@@ -13,8 +14,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '17'
-      - run: echo $NEXT_PUBLIC_ALGOLIA_APP_ID
-      - run: echo $NEXT_PUBLIC_ALGOLIA_INDEX_NAME
       - run: yarn
       - run: node ./lib/sendToAlgolia.js
       - run: sh ./scripts/commitAndPush.sh

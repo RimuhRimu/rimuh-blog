@@ -1,5 +1,5 @@
-import styles from "@/Layout.module.css"
-import { Discord, GitHub, Twitter } from "iconoir-react"
+import styles from "@/Layout.module.css";
+import { Discord, GitHub, Twitter } from "iconoir-react";
 export default function Footer() {
   return (
     <>
@@ -10,5 +10,5 @@ export default function Footer() {
         <Discord />
       </footer>
     </>
-  )
+  );
 }
