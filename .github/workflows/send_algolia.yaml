@@ -1,5 +1,5 @@
 name: update-algolia-index
-run-name: ${{ github.actor }} update algolia indexes
+run-name: update algolia indexes
 on: [push]
 jobs:
   check-bats-version:
