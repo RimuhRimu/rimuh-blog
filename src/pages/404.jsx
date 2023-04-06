@@ -1,4 +1,4 @@
-import BackHome from "@/backHome/index.js";
+import BackHome from "@/backHome";
 
 export default function NotFound() {
   return (
