@@ -1,5 +1,5 @@
 .app {
-  margin: 5vw;
+  margin: 10vw 5vw;
   max-width: 100vw;
   min-height: 100vh;
   display: flex;
@@ -7,18 +7,61 @@
   align-items: center;
 }
 
-@media screen and (max-width: 450px) {
-  .iconTheme {
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topSocialMedia {
+  display: flex;
+  gap: 10px;
+}
+
+.github,.twitter,.discord {
+  color: white;
+  background: #a3a3a3;
+  padding: 8px 8px 8px 8px;
+  border-radius: var(--border-radius);
+}
+
+.github {
+  background: #000;
+}
+
+.twitter {
+  background: #00acee;
+}
+
+.discord {
+  background: #5865F2;
+}
+
+@media screen and (max-width: 800px) {
+  .icons {
     position: static;
+    margin-bottom: 15px;
+  }
+
+  .topSocialMedia {
+    position: absolute;
+    flex-direction: column;
+    top: 12rem;
+    right: 15px;
   }
 }
 
-@media screen and (min-width: 450px) {
-  .iconTheme {
+@media screen and (min-width: 800px) {
+  .icons {
     padding: 5px 0;
     position: absolute;
     top: 20px;
-    left: 90%;
+    left: 75%;
+  }
+
+  .iconTheme {
+    margin-right: 15px;
+    margin-top: 7px;
   }
 }
 
@@ -33,14 +76,42 @@
   max-width: 590px;
 }
 
+.linkToPortfolio {
+  padding: 15px;
+  border-radius: var(--border-radius);
+  text-align: center;
+}
+
+.linkToPortfolio:hover {
+  background: var(--item-hover-color);
+  transition: 0.4s ease all;
+}
+
 .backToHome {
   margin: 3rem 0 0;
 }
 
+.bottomSocialMedia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.poweredBy {
+  display: flex;
+  gap: 10px;
+}
+
+.poweredBy img {
+  border-radius: 0;
+}
+
 .footer {
-  height: 50px;
+  padding: 5px;
   color: #e3e3e3;
   background: #3a394a;
+  flex-direction: column;
   display: flex;
   align-items: center;
   justify-content: center;

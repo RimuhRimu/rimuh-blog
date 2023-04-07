@@ -1,3 +1,15 @@
+.search {
+  position: relative;
+  margin-bottom: 26px;
+}
+
+.poweredBy {
+  width: 100px;
+  position: absolute;
+  right: 10px;
+  top: 2.5em;
+}
+
 .formSearch {
   display: flex;
   align-items: center;

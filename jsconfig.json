@@ -6,7 +6,8 @@
         "./components/*",
         "./styles/*",
         "./public/*",
-        "./lib/*"
+        "./lib/*",
+        "./context/*"
       ]
     }
   }
