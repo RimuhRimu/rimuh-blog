@@ -2,11 +2,11 @@ import Posts from "@/posts";
 
 import styles from "@/Layout.module.css";
 import Layout from "@/layout";
-import { getRecords } from "@/getPostsNames";
+import { getData } from "@/getData";
 import Link from "next/link";
 
 export async function getStaticProps() {
-  const posts = getRecords();
+  const posts = getData("records");
   return {
     props: {
       posts,
