@@ -34,7 +34,7 @@
     ]
   },
   "🖇 Deno Wordle": {
-    "description": "Terminal based game that uses pokemon names to play wordle all buildt with Deno + Typescript",
+    "description": "Terminal based game that uses pokemon names to play wordle all built with Deno + Typescript",
     "imgSrc": "https://picsum.photos/400/300",
     "src": "https://github.com/RimuhRimu/runthis.nvim",
     "linkToPost": "",
