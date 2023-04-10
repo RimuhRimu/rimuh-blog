@@ -18,7 +18,7 @@ export default function Footer() {
           <Link href="#" target="_blank"><Discord /></Link>
         </div>
         <div className={styles.poweredBy}>
-          <h5>Powered by vercel <a href="https://vercel.com"><Image width={80} height={80} src={vercel} alt="powered by vercel" /></a> </h5>
+          <h5>Powered by <a href="https://vercel.com"><Image width={80} height={80} src={vercel} alt="powered by vercel" /></a> </h5>
           <h5> and made with <a href="https://nextjs.org"><Image width={80} height={80} src={next} alt="made with next.js" /></a> </h5>
         </div>
       </footer>

@@ -34,7 +34,7 @@ export default function Layout({ children, home }) {
           </div>
           <div className={styles.topSocialMedia}>
             <a href="https://github.com/RimuhRimu" target="_blank"><GitHub className={styles.github} /></a>
-            <a href="https://twitter.com/" target="_blank"><Twitter className={styles.twitter} /></a>
+            <a href="https://twitter.com/rimuhrimu" target="_blank"><Twitter className={styles.twitter} /></a>
             <a href="#"><Discord className={styles.discord} /></a>
           </div>
         </div>
