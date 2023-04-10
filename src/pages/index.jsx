@@ -1,9 +1,10 @@
+import Link from "next/link";
+
 import Posts from "@/posts";
+import { getData } from "@/getData";
 
 import styles from "@/Layout.module.css";
 import Layout from "@/layout";
-import { getData } from "@/getData";
-import Link from "next/link";
 
 export async function getStaticProps() {
   const posts = getData("records");

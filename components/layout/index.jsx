@@ -48,7 +48,9 @@ export default function Layout({ children, home }) {
             className={styles.profile}
           />
         </Link>
-        {children}
+        <section className={styles.appChild}>
+          {children}
+        </section>
         {!home ? <BackHome /> : null}
       </main>
       <Footer />

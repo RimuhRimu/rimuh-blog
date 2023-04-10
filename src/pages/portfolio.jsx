@@ -1,8 +1,37 @@
+import Link from "next/link"
+
+import {
+  NodejsOriginalIcon,
+  TypescriptOriginalIcon,
+  JavascriptOriginalIcon,
+  DenojsOriginalIcon,
+  Html5OriginalIcon,
+  Css3OriginalIcon,
+  ReactOriginalIcon,
+  HaskellOriginalIcon,
+  LuaOriginalIcon,
+} from "react-devicons"
+
 import Layout from "@/layout"
 
 import { getData } from "@/getData"
 
 import styles from "@/utils.module.css"
+
+const size = 30
+
+const tecnologies = {
+  ["react"]: <ReactOriginalIcon size={size} />,
+  ["typescript"]: <TypescriptOriginalIcon size={size} />,
+  ["node"]: <NodejsOriginalIcon size={size} />,
+  ["html"]: <Html5OriginalIcon size={size} />,
+  ["css"]: <Css3OriginalIcon size={size} />,
+  ["javascript"]: <JavascriptOriginalIcon size={size} />,
+  ["deno"]: <DenojsOriginalIcon size={size} />,
+  ["haskell"]: <HaskellOriginalIcon size={size} />,
+  ["lua"]: <LuaOriginalIcon size={size} />,
+  ["fresh"]: <img style={{ display: "inline" }} height={size} width={size} src="https://camo.githubusercontent.com/4e0efa262c9df8dc1a327535f87a53a57a68b6073677dc17806acf10e26c4956/68747470733a2f2f66726573682e64656e6f2e6465762f6c6f676f2e737667" />
+}
 
 export function getStaticProps() {
   const projects = getData("projects")
@@ -13,14 +42,25 @@ export function getStaticProps() {
   }
 }
 
-
-function Project({ name, description, imgSrc, linkToPost, tools }) {
+function Project({ name, description, imgSrc, linkToPost, tools, src }) {
   return (
     <div className={styles.projectCard}>
       <figure>
-        <figcaption>{name}</figcaption>
-        <img src={imgSrc} />
-        <p>{description}</p>
+        <figcaption className={styles.cardTitle}><Link href={src} target="_blank">{name}</Link></figcaption>
+        <div className={styles.cardImage}>
+          <img src={imgSrc} loading="lazy" style={{ objectFit: "cover", height: "100%", width: "100%" }} />
+        </div>
+        <p className={styles.cardDescription}>{description}</p>
+        <div className={styles.cardFooter}>
+          <div className={styles.tecnologies}>
+            {
+              tools.map(tool => tecnologies[tool.toLowerCase()])
+            }
+          </div>
+          {
+            linkToPost && <Link href={linkToPost}><small>See my post about this project 👆</small></Link>
+          }
+        </div>
       </figure>
     </div>
   )

@@ -1,5 +1,6 @@
 import { connectSearchBox } from "react-instantsearch-dom";
 import { ArrowLeft, Cancel, Search } from "iconoir-react";
+
 import searchStyles from "@/search.module.css";
 
 const CustomInput = ({ refine }) => {

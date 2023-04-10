@@ -1,7 +1,7 @@
 {
   "🎮 Haskell Tiny Games": {
     "description": "Tiny web to show and play all the games from the tiny games haskell gamejam",
-    "imgSrc": "https://picsum.photos/400/300",
+    "imgSrc": "https://github.com/RimuhRimu/haskell-tiny-games-web/raw/master/static/screen.png",
     "src": "https://github.com/RimuhRimu/haskell-tiny-games-web",
     "linkToPost": "",
     "tools": [
@@ -13,7 +13,7 @@
   },
   "🏃 runthis.nvim": {
     "description": "A plugin for neovim editor that for various languages like Javascript ,Typescript , Python, Java, C, Rust ... on save shows the output inside neovim",
-    "imgSrc": "https://picsum.photos/400/300",
+    "imgSrc": "https://github.com/RimuhRimu/runthis.nvim/raw/main/screenshots/sh1.png",
     "src": "https://github.com/RimuhRimu/runthis.nvim",
     "linkToPost": "",
     "tools": [
@@ -23,8 +23,8 @@
   },
   "💜 Gipphy App": {
     "description": "React app made from 0 that lets the user search gifs using the giphy API. Implements a login, register and add/remove favs features and also has a backend made with Deno using typescript",
-    "imgSrc": "https://picsum.photos/400/300",
-    "src": "https://github.com/RimuhRimu/runthis.nvim",
+    "imgSrc": "https://raw.githubusercontent.com/RimuhRimu/gipphy-app/main/public/logo.png",
+    "src": "https://github.com/RimuhRimu/gipphy-app",
     "linkToPost": "",
     "tools": [
       "react",
@@ -35,8 +35,8 @@
   },
   "🖇 Deno Wordle": {
     "description": "Terminal based game that uses pokemon names to play wordle all built with Deno + Typescript",
-    "imgSrc": "https://picsum.photos/400/300",
-    "src": "https://github.com/RimuhRimu/runthis.nvim",
+    "imgSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/denojs/denojs-original.svg",
+    "src": "https://github.com/RimuhRimu/deno-wordle",
     "linkToPost": "",
     "tools": [
       "Deno",
@@ -45,7 +45,7 @@
   },
   "🖩 Calculator": {
     "description": "Simple calculator as my first project with React",
-    "imgSrc": "https://picsum.photos/400/300",
+    "imgSrc": "https://camo.githubusercontent.com/2e48e6a0546f0345a9b6cb94a9ed5bf3cd4656c08e35543454ed34f3dbaeba93/68747470733a2f2f692e696d6775722e636f6d2f6652794b4c63692e676966",
     "src": "https://github.com/RimuhRimu/calculator",
     "linkToPost": "",
     "tools": [
@@ -55,9 +55,9 @@
   },
   "📹 Custom video player": {
     "description": "A whole video player with controls built from 0 using web APIs",
-    "imgSrc": "https://picsum.photos/400/300",
+    "imgSrc": "https://github.com/RimuhRimu/rimuh-blog/raw/main/public/img/how-to-build-video-html/9.png",
     "src": "https://github.com/RimuhRimu/video-player-html",
-    "linkToPost": "",
+    "linkToPost": "/posts/how-to-build-video-html",
     "tools": [
       "html",
       "css",
@@ -66,33 +66,12 @@
   },
   "🤔 Tic-tac-toe": {
     "description": "Typical game tic-tac-toe made with React + javascript",
-    "imgSrc": "https://picsum.photos/400/300",
+    "imgSrc": "https://camo.githubusercontent.com/8b172be49738f5a75ade70872fd1256e9c1f83c7f3da6b2d6099b4038a91eccb/68747470733a2f2f692e696d6775722e636f6d2f426767436e4b792e676966",
     "src": "https://github.com/RimuhRimu/tic-tac-toe",
     "linkToPost": "",
     "tools": [
       "React",
       "Javascript"
     ]
-  },
-  "🗐 Luc blog": {
-    "description": "Todo",
-    "imgSrc": "https://picsum.photos/400/300",
-    "src": "",
-    "linkToPost": "",
-    "tools": []
-  },
-  "🌩 Weather App": {
-    "description": "Todo",
-    "imgSrc": "https://picsum.photos/400/300",
-    "src": "",
-    "linkToPost": "",
-    "tools": []
-  },
-  "♔ Chess Game": {
-    "description": "Todo",
-    "imgSrc": "https://picsum.photos/400/300",
-    "src": "",
-    "linkToPost": "",
-    "tools": []
   }
 }

@@ -1,5 +1,6 @@
-import utils from "@/utils.module.css";
 import Link from "next/link";
+
+import utils from "@/utils.module.css";
 
 export default function Posts({ posts }) {
   return (

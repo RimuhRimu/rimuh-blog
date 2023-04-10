@@ -16,6 +16,7 @@
     "iconoir-react": "^6.4.1",
     "next": "13.2.4",
     "react": "18.2.0",
+    "react-devicons": "^2.14.0",
     "react-dom": "18.2.0",
     "react-instantsearch-dom": "^6.39.1",
     "react-instantsearch-hooks-web": "^6.42.0",

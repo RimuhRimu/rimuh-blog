@@ -9,6 +9,7 @@ const themes = {
     "--search-background-color": "#505986",
     "--shadow-search": "2px 3px 8px 2px #505986",
     "--hits-background-color": "#2f2f2fef",
+    "--card-background": "#334c7712",
     "color-scheme": "dark"
   },
   light: {
@@ -19,12 +20,12 @@ const themes = {
     "--search-background-color": "#f9f9fe",
     "--shadow-search": "2px 3px 8px 2px #dedef6",
     "--hits-background-color": "#f1f1fe",
+    "--card-background": "#ffffff99",
     "color-scheme": "light"
   },
 };
 
 export const ThemeContext = createContext(null)
-
 
 export function ThemeProvider({ children }) {
 

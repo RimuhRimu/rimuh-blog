@@ -1,5 +1,6 @@
-import { connectStateResults, Highlight } from "react-instantsearch-dom";
 import Link from "next/link";
+
+import { connectStateResults, Highlight } from "react-instantsearch-dom";
 
 import searchStyles from "@/search.module.css";
 
