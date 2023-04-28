@@ -1,0 +1,53 @@
+.portfolioGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+  gap: 10px;
+}
+
+@media screen and (max-width: 450px) {
+  .portfolioGrid {
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  }
+}
+
+.projectCard {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 16px;
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+}
+
+.cardTitle {
+  padding: 10px;
+}
+
+.cardImage {
+  height: 260px;
+}
+
+.cardDescription {
+  background-color: #ffffff11;
+  padding: 12px;
+  border-radius: var(--border-radius);
+  height: 100px;
+  overflow: auto;
+}
+
+.tecnologiesSection {
+  width: inherit;
+}
+
+.tecnologiesTop {
+  display:flex;
+  flex-wrap: wrap;
+  width: inherit;
+  justify-content: center;
+}
+
+.tecnologiesTop figure {
+  text-align: center;
+}
+
+.tecnologiesCard {
+  display: flex;
+  gap: 10px;
+}

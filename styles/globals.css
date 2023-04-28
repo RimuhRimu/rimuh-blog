@@ -7,6 +7,7 @@
   --search-background-color: #f9f9fe;
   --shadow-search: 2px 3px 8px 2px #dedef6;
   --hits-background-color: #f1f1fe;
+  --card-background: #ffffff99;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
@@ -21,6 +22,7 @@
     --search-background-color: #505986;
     --shadow-search: 2px 3px 8px 2px #505986;
     --hits-background-color: #2f2f2fef;
+    --card-background: #334c7712;
   }
 }
 
@@ -30,7 +32,7 @@ body {
   margin: 0;
   font-family: -apple-system, "Inter","Helvetica", system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.6;
-  font-size: 1rem;
+  font-size: 1em;
   max-width: 100vw;
   transition: 0.3s ease color;
 }
@@ -40,7 +42,7 @@ a {
   text-decoration: none;
 }
 
-h1 {
+h1,h2,h3,h4,h5,h6 {
   text-align: center;
 }
 

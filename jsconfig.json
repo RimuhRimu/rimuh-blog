@@ -1,14 +1,14 @@
 {
-  "compilerOptions": {
-    "paths": {
-      "@/*": [
-        "./src/*",
-        "./components/*",
-        "./styles/*",
-        "./public/*",
-        "./lib/*",
-        "./context/*"
-      ]
-    }
-  }
+	"compilerOptions": {
+		"paths": {
+			"@/*": [
+				"./src/*",
+				"./components/*",
+				"./styles/*",
+				"./public/*",
+				"./lib/*",
+				"./context/*"
+			]
+		}
+	}
 }

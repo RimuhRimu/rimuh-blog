@@ -1,22 +1,23 @@
-import { connectSearchBox } from "react-instantsearch-dom";
-import { ArrowLeft, Cancel, Search } from "iconoir-react";
-import searchStyles from "@/search.module.css";
+import { connectSearchBox } from 'react-instantsearch-dom'
+import { ArrowLeft, Cancel, Search } from 'iconoir-react'
+
+import searchStyles from './styles.module.css'
 
 const CustomInput = ({ refine }) => {
   return (
     <>
-      <form id="formSearch" className={searchStyles.formSearch}>
+      <form id='formSearch' className={searchStyles.formSearch}>
         <div className={searchStyles.searchIcon}>
           <Search strokeWidth={2.5}></Search>
         </div>
         <input
-          type="search"
+          type='search'
           className={searchStyles.searchText}
           onChange={(e) => refine(e.currentTarget.value)}
-          placeholder="Type to find a post"
+          placeholder='Type to find a post'
         />
         <button
-          type="reset"
+          type='reset'
           className={searchStyles.searchCancel}
           onClick={() => refine()}
         >
@@ -27,7 +28,7 @@ const CustomInput = ({ refine }) => {
         </button>
       </form>
     </>
-  );
-};
+  )
+}
 
-export default connectSearchBox(CustomInput);
+export default connectSearchBox(CustomInput)

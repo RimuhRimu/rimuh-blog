@@ -1,23 +1,24 @@
-import utils from "@/utils.module.css";
-import Link from "next/link";
+import Link from 'next/link'
+
+import styles from './styles.module.css'
 
 export default function Posts({ posts }) {
   return (
     <ul
-      className={utils.list}
+      className={styles.list}
       style={{
-        listStyle: "none",
+        listStyle: 'none',
       }}
     >
       {posts.map(({ name, title }) => {
         return (
           <li key={name}>
-            <Link href={`/posts/${name}`} className={utils.itemList}>
+            <Link href={`/posts/${name}`} className={styles.itemList}>
               <i>#</i> {title}
             </Link>
           </li>
-        );
+        )
       })}
     </ul>
-  );
+  )
 }
