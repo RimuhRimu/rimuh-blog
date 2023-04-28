@@ -82,5 +82,14 @@
     "tools": [
       "Linux"
     ]
+  },
+  "🎲 Haskell GameJam": {
+    "description": "I've participated in a Haskell GameJam where the challenge was to write a simple terminal-based game with at most 10 lines of code and 80 character of length per line, I was clasified 93 of 106 participants, filter by my name RimuhRimu and you'll find me",
+    "imgSrc": "https://github.com/haskell-game/tiny-games-hs/blob/main/hackage/short-guess/short-guess.png?raw=true",
+    "src": "https://github.com/haskell-game/tiny-games-hs/tree/main/hackage/short-guess",
+    "linkToPost": "",
+    "tools": [
+      "Haskell"
+    ]
   }
 }
