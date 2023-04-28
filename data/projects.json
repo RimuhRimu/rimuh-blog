@@ -12,7 +12,7 @@
     ]
   },
   "🏃 runthis.nvim": {
-    "description": "A plugin for neovim editor that for various languages like Javascript ,Typescript , Python, Java, C, Rust ... on save shows the output inside neovim",
+    "description": "A plugin for neovim editor that runs code for various languages like Javascript ,Typescript , Python, Java, C, Rust inside neovim",
     "imgSrc": "https://github.com/RimuhRimu/runthis.nvim/raw/main/screenshots/sh1.png",
     "src": "https://github.com/RimuhRimu/runthis.nvim",
     "linkToPost": "",
@@ -23,7 +23,7 @@
   },
   "💜 Gipphy App": {
     "description": "React app made from 0 that lets the user search gifs using the giphy API. Implements a login, register and add/remove favs features and also has a backend made with Deno using typescript",
-    "imgSrc": "https://raw.githubusercontent.com/RimuhRimu/gipphy-app/main/public/logo.png",
+    "imgSrc": "https://github.com/RimuhRimu/gipphy-app/blob/main/public/screenshot.png?raw=true",
     "src": "https://github.com/RimuhRimu/gipphy-app",
     "linkToPost": "",
     "tools": [
@@ -33,9 +33,9 @@
       "typescript"
     ]
   },
-  "🖇 Deno Wordle": {
+  "📎 Deno Wordle": {
     "description": "Terminal based game that uses pokemon names to play wordle all built with Deno + Typescript",
-    "imgSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/denojs/denojs-original.svg",
+    "imgSrc": "https://github.com/RimuhRimu/deno-wordle/blob/master/screen.png?raw=true",
     "src": "https://github.com/RimuhRimu/deno-wordle",
     "linkToPost": "",
     "tools": [
@@ -43,7 +43,7 @@
       "Typescript"
     ]
   },
-  "🖩 Calculator": {
+  "📱 Calculator": {
     "description": "Simple calculator as my first project with React",
     "imgSrc": "https://camo.githubusercontent.com/2e48e6a0546f0345a9b6cb94a9ed5bf3cd4656c08e35543454ed34f3dbaeba93/68747470733a2f2f692e696d6775722e636f6d2f6652794b4c63692e676966",
     "src": "https://github.com/RimuhRimu/calculator",
@@ -72,6 +72,15 @@
     "tools": [
       "React",
       "Javascript"
+    ]
+  },
+  "🎨 My linux environment": {
+    "description": "My daily use OS is linux(Manjaro), and it has been very useful and through it I've learnt basic and intermediate linux system management, I've also worked with ubuntu before(I used ubuntu 2 years before switching to manjaro), I've made some custom scripts and designed a comfy and beatiful environment, inspired by tokyo from rxyhn",
+    "imgSrc": "https://github.com/RimuhRimu/xdotfiles/blob/master/screenshots/sh2.png?raw=true",
+    "src": "https://github.com/RimuhRimu/xdotfiles",
+    "linkToPost": "",
+    "tools": [
+      "Linux"
     ]
   }
 }

@@ -1,11 +1,11 @@
-import Link from "next/link";
+import Link from 'next/link'
 
-import { connectStateResults, Highlight } from "react-instantsearch-dom";
+import { connectStateResults, Highlight } from 'react-instantsearch-dom'
 
-import searchStyles from "@/search.module.css";
+import searchStyles from './styles.module.css'
 
 const CustomStatus = connectStateResults(({ searchState, searchResults }) => {
-  const validQuery = searchState.query?.length >= 2;
+  const validQuery = searchState.query?.length >= 2
   return (
     <>
       {searchResults?.hits.length === 0 && validQuery && (
@@ -19,10 +19,10 @@ const CustomStatus = connectStateResults(({ searchState, searchResults }) => {
             <li key={hit.objectID} className={searchStyles.hitItem}>
               <Link href={`/posts/${hit.name}`}>
                 <div>
-                  <Highlight hit={hit} attribute="title" tagName="mark">
+                  <Highlight hit={hit} attribute='title' tagName='mark'>
                   </Highlight>
                   <small>
-                    <Highlight hit={hit} attribute="content" tagName="mark">
+                    <Highlight hit={hit} attribute='content' tagName='mark'>
                     </Highlight>
                   </small>
                 </div>
@@ -32,7 +32,7 @@ const CustomStatus = connectStateResults(({ searchState, searchResults }) => {
         </ul>
       )}
     </>
-  );
-});
+  )
+})
 
-export default CustomStatus;
+export default CustomStatus
