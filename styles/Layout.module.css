@@ -14,6 +14,10 @@
   align-items: center;
 }
 
+.iconTheme {
+  cursor: pointer;
+}
+
 .icons {
   display: flex;
   align-items: center;
@@ -105,15 +109,6 @@
   gap: 10px;
 }
 
-.poweredBy {
-  display: flex;
-  gap: 10px;
-}
-
-.poweredBy img {
-  border-radius: 0;
-}
-
 .footer {
   padding: 5px;
   color: #e3e3e3;
@@ -123,4 +118,5 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
+  min-height: 60px;
 }
