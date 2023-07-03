@@ -13,7 +13,7 @@
   },
   "🏃 runthis.nvim": {
     "description": "A plugin for neovim editor that runs code for various languages like Javascript ,Typescript , Python, Java, C, Rust inside neovim",
-    "imgSrc": "https://github.com/RimuhRimu/runthis.nvim/raw/main/screenshots/sh1.png",
+    "imgSrc": "https://user-images.githubusercontent.com/68438095/250212865-abd469fd-21fe-47dc-b864-388877d1b9b8.png",
     "src": "https://github.com/RimuhRimu/runthis.nvim",
     "linkToPost": "",
     "tools": [
@@ -76,7 +76,7 @@
   },
   "🎨 My linux environment": {
     "description": "My daily use OS is linux(Manjaro), and it has been very useful and through it I've learnt basic and intermediate linux system management, I've also worked with ubuntu before(I used ubuntu 2 years before switching to manjaro), I've made some custom scripts and designed a comfy and beatiful environment, inspired by tokyo from rxyhn",
-    "imgSrc": "https://github.com/RimuhRimu/xdotfiles/blob/master/screenshots/sh2.png?raw=true",
+    "imgSrc": "https://github.com/RimuhRimu/xdotfiles/blob/main/screenshots/sh2.png?raw=true",
     "src": "https://github.com/RimuhRimu/xdotfiles",
     "linkToPost": "",
     "tools": [
